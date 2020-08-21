@@ -27,8 +27,6 @@ export default {
 </script>
 
 <style>
-
-<style>
 .container {
   padding: 5px 10px;
 }
