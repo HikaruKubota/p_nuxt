@@ -11,6 +11,12 @@
 
 <script>
 export default {
+  validate({params}){
+    if (params.id == undefined || params.pass == undefined) {
+      return false
+    }
+    return true
+  },
   data: function () {
     return {
       title: 'login',
