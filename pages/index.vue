@@ -2,6 +2,13 @@
   <section class="container">
     <h1>{{title}}</h1>
     <p>{{$store.state.message}}</p>
+    <hr>
+    <div class="link"
+      v-on:click="doAction">
+      <a>
+        clicked: {{$store.state.counter}}
+      </a>
+    </div>
     <p>{{message}}</p>
     <hr>
     <pre>[{{now}}]</pre>
@@ -17,6 +24,11 @@ export default {
       now: 'wait...'
     }
   },
+  methods: {
+    doAction: function () {
+      this.$store.state.counter++
+    }
+  },
   created: function () {
     setInterval(()=>{
       let a = new Date()
@@ -29,6 +41,9 @@ export default {
 <style>
 .container {
   padding: 5px 10px;
+}
+a {
+  font-size: 16pt;
 }
 h1 {
   font-size: 60pt;
