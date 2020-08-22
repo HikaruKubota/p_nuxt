@@ -4,7 +4,8 @@
     <p>{{$store.state.message}}</p>
     <hr>
     <div class="link"
-      v-on:click="doAction">
+      @click.exact="$store.commit('count')"
+      @click.shift="$store.commit('reset')">
       <a>
         clicked: {{$store.state.counter}}
       </a>
@@ -22,11 +23,6 @@ export default {
       title: 'hello!',
       message: 'this is a message!',
       now: 'wait...'
-    }
-  },
-  methods: {
-    doAction: function () {
-      this.$store.state.counter++
     }
   },
   created: function () {
